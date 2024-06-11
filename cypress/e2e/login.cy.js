@@ -1,14 +1,31 @@
+//Config hooks
+beforeEach(() => {
+  cy.visit('https://automacao.qacoders-academy.com.br/login');
+});
+
 describe('Login', () => {
-  it('Login with sucess', () => {
-    cy.visit('https://automacao.qacoders-academy.com.br/login');
-    cy.get('#email').type('sysadmin@qacoders.com');
-    cy.get('#password').type('1234@Test');
+  it('Login sucess', () => {
+   const email = Cypress.env('EMAIL');
+   const password = Cypress.env('PASSWORD');
+
+    cy.Login(email, password)
+
+  });
+  
+  it('Login password invalid', () => {
+    cy.get('#email').type(Cypress.env('EMAIL'));
+    cy.get('#password').type('1234@T');
     cy.get('#login').click();
 
-    cy.location().should((loc) => {
-      expect(loc.pathname).to.eq('/login')
-    });
+    cy.MsgInvalid();
 
-    cy.get('body > nav > button').should('be.visible');
-  });
+});
+it('Login email invalid', () => {
+  cy.get('#email').type('teste@teste.com.br');
+  cy.get('#password').type(Cypress.env('PASSWORD'));
+  cy.get('#login').click();
+
+  cy.MsgInvalid();
+
+});
 });
