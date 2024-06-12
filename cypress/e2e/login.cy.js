@@ -6,6 +6,10 @@ beforeEach(() => {
   cy.visit('https://automacao.qacoders-academy.com.br/login');
 });
 
+afterEach(() =>{
+  cy.screenshot();
+})
+
 describe('Login', () => {
   it('Login sucess', () => {
    const email = Cypress.env('EMAIL');
