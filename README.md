@@ -1,25 +1,8 @@
 # Projeto automação WEB com Cypress
 
-Projeto de automação web com Cypress adicionando o teste no Github Action.
+Projeto de automação web com Cypress e adicionando o teste no Github Action.
 
 ## Pré requisitos para utilizar o projeto
-
-### SO
-- macOS 10.9 e superior (Intel ou Apple Silicon 64-bit (x64 ou arm64))
-- Linux Ubuntu 20.04 e superior, Fedora 21 e Debian 8 (x86_64 ou Arm 64 bits (x64 ou arm64)) 
-- Windows 10 e superior (apenas 64 bits)
-
-### Hardware
-- Mínimo de 2 CPUs para rodar o Cypress
-- 1 CPU adicional se a gravação de vídeo estiver ativada
-- 1 CPU adicional por processo executado fora do Cypress, como:
-    - Servidor de aplicativos (frontend)
-    - Servidor de aplicativos (back-end)
-- Banco de dados de aplicativos
-- Qualquer infraestrutura adicional (Redis, Kafka, etc.)
-
-### Memória
-- Mínimo de 4 GB, 8 GB + para execuções de teste mais longos.
 
 ### NodeJS
 - Node.js 18.x
@@ -58,9 +41,11 @@ Está configurado no package.json, um bloco de script para executar o cypress
 ```bash
 "scripts": {
     "cypress:open": "cypress open"
+    "cypress:run": cypress run
   }
 ```
 A sintaxe "cypress:open" determina como será executado o cypress, recebendo a instrução padrão "cypress open"
+A sintaxe "cypress:run" determina como será executado o cypress em modo adds, adicionado no package.json.
 
 ### 04 Executando o cypress
 
