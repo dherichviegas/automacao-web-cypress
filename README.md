@@ -41,7 +41,7 @@ Está configurado no package.json, um bloco de script para executar o cypress
 ```bash
 "scripts": {
     "cypress:open": "cypress open"
-    "cypress:run": cypress run
+    "cypress:run": "cypress run"
   }
 ```
 A sintaxe "cypress:open" determina como será executado o cypress, recebendo a instrução padrão "cypress open"
